@@ -21,7 +21,7 @@ KERNELSOURCE="https://github.com/kornero/linux"
 KERNELBRANCH="branch:cs918s-5.4"
 KERNELPATCHDIR="NEED-NOT" # Included in repo
 KERNELDIR="linux-${BOARD}" # do not share kernel directory.
-LINUXCONFIG=linux-sunxi-cs918s-legacy.config
+LINUXCONFIG="linux-sunxi-cs918s-legacy"
 KERNEL_DRIVERS_SKIP+=(driver_rtw88) # Skip rtw88 to avoid patching failures.
 
 declare -g KERNELBRANCH="branch:cs918s-5.4"
