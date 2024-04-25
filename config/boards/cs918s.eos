@@ -1,0 +1,25 @@
+# A31s quad core 2Gb SoC Wifi CS918S
+BOARD_NAME="CS918S"
+BOARDFAMILY="sun6i"
+BOOTCONFIG="CS918S_defconfig"
+OVERLAY_PREFIX="sun6i-a31s"
+KERNEL_TARGET="legacy"
+FULL_DESKTOP="no"
+BRANCH="legacy"
+BUILD_MINIMAL="yes"
+KERNEL_CONFIGURE="no"
+RELEASE="bookworm"
+EXTRAWIFI="no"
+BOOTSOURCE="https://github.com/kornero/u-boot"
+BOOTBRANCH="branch:u-boot-2019.01-cs918s"
+BOOTBRANCH_BOARD="branch:u-boot-2019.01-cs918s"
+BOOTDIR="u-boot-${BOARD}" # do not share u-boot directory.
+BOOTPATCHDIR="NEED-NOT"
+#####BOOT_FDT_FILE="???/sun6i-a31-cs918s.dtb"
+KERNEL_MAJOR_MINOR="5.4"
+KERNELSOURCE="https://github.com/kornero/linux"
+KERNELBRANCH="branch:cs918s-5.4"
+KERNELPATCHDIR="NEED-NOT" # Included in repo
+KERNELDIR="linux-${BOARD}" # do not share kernel directory.
+LINUXCONFIG=linux-sunxi-cs918s-legacy.config
+KERNEL_DRIVERS_SKIP+=(driver_rtw88) # Skip rtw88 to avoid patching failures.
