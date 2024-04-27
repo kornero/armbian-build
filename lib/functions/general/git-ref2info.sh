@@ -123,6 +123,10 @@ function memoized_git_ref_to_info() {
 					url="${gitlab_path}/-/raw/${sha1}/Makefile"
 					;;
 
+				"https://codeberg.org/megi/linux/"*)
+					url="https://codeberg.org/megi/linux/raw/commit/${sha1}/Makefile"
+					;;
+
 				*)
 					exit_with_error "Unknown git source '${git_source}'"
 					;;
