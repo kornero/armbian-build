@@ -26,11 +26,13 @@ KERNEL_DRIVERS_SKIP+=(driver_rtw88) # Skip rtw88 to avoid patching failures.
 
 declare -g KERNELBRANCH="branch:cs918s-5.4"
 declare -g KERNELPATCHDIR="NEED-NOT" # Included in repo
+declare -g kernel_version_family="5.4.88-sunxi"
 
 function post_family_config_branch_legacy__cs918s_54_kernel() {
 	declare -g KERNEL_MAJOR_MINOR="5.4" # Major and minor versions of this kernel.
 	declare -g KERNELBRANCH='branch:cs918s-5.4'
 	declare -g KERNELSOURCE='https://github.com/kornero/linux'
 	declare -g KERNELPATCHDIR="NEED-NOT" # Included in repo
+	declare -g kernel_version_family="5.4.88-sunxi"
 	display_alert "Set up legacy 5.4 kernel ${KERNELBRANCH} for" "${BOARD}" "info"
 }
