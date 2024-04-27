@@ -183,19 +183,23 @@ function artifact_kernel_prepare_version() {
 	# map what "compile_kernel()" will produce - legacy deb names and versions
 
 	# linux-image is always produced...
-	artifact_map_packages=(["linux-image"]="linux-image-${BRANCH}-${LINUXFAMILY}")
+#	artifact_map_packages=(["linux-image"]="linux-image-${BRANCH}-${LINUXFAMILY}")
+	artifact_map_packages=(["linux-image"]="linux-image-${LINUXFAMILY}")
 
 	# some/most kernels have also working headers...
 	if [[ "${KERNEL_HAS_WORKING_HEADERS:-"no"}" == "yes" ]]; then
-		artifact_map_packages+=(["linux-headers"]="linux-headers-${BRANCH}-${LINUXFAMILY}")
+#		artifact_map_packages+=(["linux-headers"]="linux-headers-${BRANCH}-${LINUXFAMILY}")
+		artifact_map_packages+=(["linux-headers"]="linux-headers-${LINUXFAMILY}")
 	fi
 
 	# x86, specially, does not have working dtbs...
 	if [[ "${KERNEL_BUILD_DTBS:-"yes"}" == "yes" ]]; then
-		artifact_map_packages+=(["linux-dtb"]="linux-dtb-${BRANCH}-${LINUXFAMILY}")
+#		artifact_map_packages+=(["linux-dtb"]="linux-dtb-${BRANCH}-${LINUXFAMILY}")
+		artifact_map_packages+=(["linux-dtb"]="linux-dtb-${LINUXFAMILY}")
 	fi
 
-	artifact_name="kernel-${LINUXFAMILY}-${BRANCH}"
+#	artifact_name="kernel-${LINUXFAMILY}-${BRANCH}"
+	artifact_name="kernel-${BRANCH}"
 	artifact_type="deb-tar" # this triggers processing of .deb files in the maps to produce a tarball
 	artifact_deb_repo="global"
 	artifact_deb_arch="${ARCH}"
