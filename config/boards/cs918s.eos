@@ -30,11 +30,13 @@ KERNEL_DRIVERS_SKIP+=(driver_rtw88) # Skip rtw88 to avoid patching failures.
 
 KERNEL_IMAGE_TYPE=Image
 KERNEL_INSTALL_TYPE=install
+KERNEL_USE_GCC='< 8.4'
 
 function post_family_config_branch_legacy__cs918s_54_kernel() {
 	declare -g KERNEL_MAJOR_MINOR="5.4" # Major and minor versions of this kernel.
 	declare -g KERNEL_IMAGE_TYPE="Image"
 	declare -g KERNEL_INSTALL_TYPE="install"
+	declare -g KERNEL_USE_GCC='< 8.4'
 
 	#declare -g KERNELSOURCE='https://github.com/kornero/linux'
 	#declare -g KERNELBRANCH='branch:cs918s-5.4'
